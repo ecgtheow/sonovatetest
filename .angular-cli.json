@@ -37,18 +37,34 @@
   "lint": [
     {
       "project": "src/tsconfig.app.json",
-      "exclude": "**/node_modules/**/*"
+      "exclude": [
+        "**/node_modules/**/*",
+        "**/src/test/**/*"
+      ]
     },
     {
       "project": "src/tsconfig.spec.json",
-      "exclude": "**/node_modules/**/*"
+      "exclude": [
+        "**/node_modules/**/*",
+        "**/src/test/**/*"
+      ]
     },
     {
       "project": "e2e/tsconfig.e2e.json",
-      "exclude": "**/node_modules/**/*"
+      "exclude": [
+        "**/node_modules/**/*",
+        "**/src/test/**/*"
+      ]
     }
   ],
   "test": {
+    "codeCoverage": {
+      "exclude": [
+        "src/polyfills.ts",
+        "src/test.ts",
+        "src/test/**/*"
+      ]
+    },
     "karma": {
       "config": "./karma.conf.js"
     }

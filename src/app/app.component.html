@@ -29,6 +29,16 @@
   </div>
   <div class="row">
     <div class="col-12">
+      <div *ngFor="let alert of alerts; let idx = index">
+        <ngb-alert type="warning"
+                   (close)="closeAlert (idx)">
+          {{alert}}
+        </ngb-alert>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
       <router-outlet></router-outlet>
     </div>
   </div>
