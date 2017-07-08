@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { BASE_PATH } from './api/variables';
 
 import { SharedModule } from './shared/shared.module';
+import { CandidatesModule } from './candidates/candidates.module';
 import { AlertsService } from './alerts.service';
 
 @NgModule({
@@ -19,6 +20,7 @@ import { AlertsService } from './alerts.service';
   imports: [
     BrowserModule,
     SharedModule,
+    CandidatesModule,
     AppRoutingModule,
     HttpModule,
     NgbModule.forRoot ()
