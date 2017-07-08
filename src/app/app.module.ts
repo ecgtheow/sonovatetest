@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { SharedModule } from './shared/shared.module';
+import { AlertsService } from './alerts.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     NgbModule.forRoot ()
   ],
-  providers: [],
+  providers: [
+    AlertsService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
