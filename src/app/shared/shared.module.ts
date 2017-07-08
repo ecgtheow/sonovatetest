@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { NeedsBlurDirective } from '../needs-blur.directive';
-import { AreYouSureDialogComponent } from '../are-you-sure-dialog/are-you-sure-dialog.component';
+import { AreYouSureDiscardDialogComponent } from '../are-you-sure-discard-dialog/are-you-sure-discard-dialog.component';
 
 @NgModule({
   imports: [
@@ -10,14 +10,14 @@ import { AreYouSureDialogComponent } from '../are-you-sure-dialog/are-you-sure-d
   ],
   declarations: [
     NeedsBlurDirective,
-    AreYouSureDialogComponent
+    AreYouSureDiscardDialogComponent
   ],
   exports: [
     NeedsBlurDirective,
-    AreYouSureDialogComponent
+    AreYouSureDiscardDialogComponent
   ],
   entryComponents: [
-    AreYouSureDialogComponent
+    AreYouSureDiscardDialogComponent
   ],
 })
 export class SharedModule { }

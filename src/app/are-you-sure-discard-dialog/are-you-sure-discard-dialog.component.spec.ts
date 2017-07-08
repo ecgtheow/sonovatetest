@@ -3,20 +3,20 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { MockNgbActiveModal } from '../../test/mocks/third-party/ng-bootstrap/active-modal';
-import { AreYouSureDialogComponent } from './are-you-sure-dialog.component';
+import { AreYouSureDiscardDialogComponent } from './are-you-sure-discard-dialog.component';
 
-describe('AreYouSureDialogComponent', () => {
-  let component: AreYouSureDialogComponent;
-  let fixture: ComponentFixture<AreYouSureDialogComponent>;
+describe ('AreYouSureDiscardDialogComponent', () => {
+  let component: AreYouSureDiscardDialogComponent;
+  let fixture: ComponentFixture<AreYouSureDiscardDialogComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach (async (() => {
+    TestBed.configureTestingModule ({
       imports: [
         NgbModule.forRoot ()
       ],
-      declarations: [ AreYouSureDialogComponent ]
+      declarations: [ AreYouSureDiscardDialogComponent ]
     })
-      .overrideComponent (AreYouSureDialogComponent, {
+      .overrideComponent (AreYouSureDiscardDialogComponent, {
         set: {
           providers: [{
             provide: NgbActiveModal,
@@ -24,17 +24,17 @@ describe('AreYouSureDialogComponent', () => {
           }]
         }
       })
-    .compileComponents();
+    .compileComponents ();
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AreYouSureDialogComponent);
+  beforeEach (() => {
+    fixture = TestBed.createComponent (AreYouSureDiscardDialogComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture.detectChanges ();
   });
 
   it('should be created', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeTruthy ();
   });
 
   describe ('close ()', () => {

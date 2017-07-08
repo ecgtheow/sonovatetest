@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component ({
-  selector: 'app-are-you-sure-dialog',
-  templateUrl: './are-you-sure-dialog.component.html',
-  styleUrls: ['./are-you-sure-dialog.component.scss']
+  selector: 'app-are-you-sure-discard-dialog',
+  templateUrl: './are-you-sure-discard-dialog.component.html',
+  styleUrls: ['./are-you-sure-discard-dialog.component.scss']
 })
-export class AreYouSureDialogComponent {
+export class AreYouSureDiscardDialogComponent {
   constructor (private modal: NgbActiveModal) {
   }
 
