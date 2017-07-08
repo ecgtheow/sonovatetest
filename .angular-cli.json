@@ -39,6 +39,7 @@
       "project": "src/tsconfig.app.json",
       "exclude": [
         "**/node_modules/**/*",
+        "**/src/app/api/**/*",
         "**/src/test/**/*"
       ]
     },
@@ -46,6 +47,7 @@
       "project": "src/tsconfig.spec.json",
       "exclude": [
         "**/node_modules/**/*",
+        "**/src/app/api/**/*",
         "**/src/test/**/*"
       ]
     },
@@ -53,6 +55,7 @@
       "project": "e2e/tsconfig.e2e.json",
       "exclude": [
         "**/node_modules/**/*",
+        "**/src/app/api/**/*",
         "**/src/test/**/*"
       ]
     }
@@ -62,7 +65,8 @@
       "exclude": [
         "src/polyfills.ts",
         "src/test.ts",
-        "src/test/**/*"
+        "src/test/**/*",
+        "src/app/api/**/*"
       ]
     },
     "karma": {

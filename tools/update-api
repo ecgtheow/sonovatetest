@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd `dirname ${0}`
+
+java -jar ./swagger-codegen-cli-2.3.0-20170706.093247-18.jar generate -i http://localhost:8080/docs/swagger.json -l typescript-angular2 -o ../src/app/api
+
