@@ -1,0 +1,49 @@
+<div *ngIf="client">
+  <div class="card">
+    <h3 class="card-header">{{client.name}}</h3>
+    <div class="card-block">
+      <form [formGroup]="clientForm">
+
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group row">
+              <label for="nameInput"
+                     class="col-3 col-form-label">
+                Name
+              </label>
+
+              <div class="col-9">
+                <input id="nameInput"
+                       type="text"
+                       class="form-control"
+                       required
+                       placeholder="Name"
+                       formControlName="name"
+                       appNeedsBlur>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <button type="button"
+              class="btn btn-primary"
+              [disabled]="clientForm.pristine || clientForm.invalid"
+              (click)="save ()">
+        Save
+      </button>
+      <button type="button"
+              class="btn"
+              [disabled]="clientForm.pristine"
+              (click)="revert ()">
+        Revert
+      </button>
+      <button type="button"
+              class="btn"
+              (click)="cancel ()">
+        Cancel
+      </button>
+
+    </div>
+  </div>
+</div>
