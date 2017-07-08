@@ -1,0 +1,29 @@
+<div class="modal-header">
+  <h4 class="modal-title">
+    Are You Sure?
+  </h4>
+
+  <button type="button"
+          class="close"
+          aria-label="Close"
+          (click)="dismiss ('Close button')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  Are you sure you want to delete this item?
+</div>
+
+<div class="modal-footer">
+  <button type="button"
+          class="btn btn-secondary"
+          (click)="close (true)">
+    Delete
+  </button>
+  <button type="button"
+          class="btn btn-primary"
+          (click)="close (false)">
+    Cancel
+  </button>
+</div>
