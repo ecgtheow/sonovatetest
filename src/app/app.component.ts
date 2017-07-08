@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import './rxjs-operators';
+
 import { AlertsService } from './alerts.service';
 
 @Component({
