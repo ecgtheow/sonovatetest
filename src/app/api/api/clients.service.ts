@@ -141,7 +141,7 @@ export class ClientsService {
      * @param id 
      * @param client The client to be updated.  The id must match the id in the path parameter
      */
-    public sonovatetestStoreUpdateClient(id: number, client: SonovatetestClient, extraHttpRequestParams?: any): Observable<{}> {
+    public sonovatetestStoreUpdateClient(id: number, client: SonovatetestClient, extraHttpRequestParams?: any): Observable<SonovatetestClient> {
         return this.sonovatetestStoreUpdateClientWithHttpInfo(id, client, extraHttpRequestParams)
             .map((response: Response) => {
                 if (response.status === 204) {

@@ -141,7 +141,7 @@ export class CandidatesService {
      * @param id 
      * @param candidate The candidate to be updated.  The id must match the id in the path parameter
      */
-    public sonovatetestStoreUpdateCandidate(id: number, candidate: SonovatetestCandidate, extraHttpRequestParams?: any): Observable<{}> {
+    public sonovatetestStoreUpdateCandidate(id: number, candidate: SonovatetestCandidate, extraHttpRequestParams?: any): Observable<SonovatetestCandidate> {
         return this.sonovatetestStoreUpdateCandidateWithHttpInfo(id, candidate, extraHttpRequestParams)
             .map((response: Response) => {
                 if (response.status === 204) {
