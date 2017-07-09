@@ -21,11 +21,11 @@ import { AlertsService } from '../../alerts.service';
 export class ClientDetailComponent implements OnInit, OnDestroy {
   @ViewChildren (NeedsBlurDirective) private needsBlur: QueryList<NeedsBlurDirective>;
 
-  private clientForm: FormGroup;
+  public clientForm: FormGroup;
 
   /* See https://stackoverflow.com/a/41177163 for subscribe cleanup */
   private ngUnsubscribe: Subject<void> = new Subject<void> ();
-  private client: SonovatetestClient;
+  public client: SonovatetestClient;
 
   constructor (private route: ActivatedRoute,
                private router: Router,

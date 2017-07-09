@@ -23,15 +23,15 @@ import { AlertsService } from '../../alerts.service';
 export class PlacementDetailComponent implements OnInit, OnDestroy {
   @ViewChildren (NeedsBlurDirective) private needsBlur: QueryList<NeedsBlurDirective>;
 
-  private placementForm: FormGroup;
+  public placementForm: FormGroup;
   private startdateModel: NgbDateStruct;
   private enddateModel: NgbDateStruct;
 
   /* See https://stackoverflow.com/a/41177163 for subscribe cleanup */
   private ngUnsubscribe: Subject<void> = new Subject<void> ();
-  private placement: SonovatetestPlacement;
-  private candidates: Observable<SonovatetestCandidate[]>;
-  private clients: Observable<SonovatetestClient[]>;
+  public placement: SonovatetestPlacement;
+  public candidates: Observable<SonovatetestCandidate[]>;
+  public clients: Observable<SonovatetestClient[]>;
   private mode: string;
 
   constructor (private route: ActivatedRoute,

@@ -10,7 +10,8 @@ import { AlertsService } from './alerts.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  private alerts: string[] = [];
+  public isNavbarExpanded = false;
+  public alerts: string[] = [];
 
   constructor (private alertsService: AlertsService) {
   }

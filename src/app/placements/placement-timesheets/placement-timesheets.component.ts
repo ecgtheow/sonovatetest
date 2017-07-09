@@ -31,10 +31,10 @@ class Timesheet {
 export class PlacementTimesheetsComponent implements OnInit, OnDestroy {
   /* See https://stackoverflow.com/a/41177163 for subscribe cleanup */
   private ngUnsubscribe: Subject<void> = new Subject<void> ();
-  private placement: SonovatetestPlacement;
-  private candidate: SonovatetestCandidate;
-  private client: SonovatetestClient;
-  private sheets: Timesheet[] = [];
+  public placement: SonovatetestPlacement;
+  public candidate: SonovatetestCandidate;
+  public client: SonovatetestClient;
+  public sheets: Timesheet[] = [];
 
   constructor (private route: ActivatedRoute,
                private router: Router,

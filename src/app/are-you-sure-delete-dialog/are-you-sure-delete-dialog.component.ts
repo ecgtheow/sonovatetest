@@ -11,11 +11,11 @@ export class AreYouSureDeleteDialogComponent {
   constructor (private modal: NgbActiveModal) {
   }
 
-  private close (sure: boolean) {
+  public close (sure: boolean) {
     this.modal.close (sure);
   }
 
-  private dismiss (reason: string) {
+  public dismiss (reason: string) {
     this.modal.dismiss (reason);
   }
 }

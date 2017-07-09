@@ -21,7 +21,7 @@ import { AlertsService } from '../../alerts.service';
 export class CandidateAddComponent implements OnInit {
   @ViewChildren (NeedsBlurDirective) private needsBlur: QueryList<NeedsBlurDirective>;
 
-  private candidateForm: FormGroup;
+  public candidateForm: FormGroup;
 
   constructor (private route: ActivatedRoute,
                private router: Router,

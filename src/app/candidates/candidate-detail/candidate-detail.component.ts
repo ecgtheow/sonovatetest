@@ -21,11 +21,11 @@ import { AlertsService } from '../../alerts.service';
 export class CandidateDetailComponent implements OnInit, OnDestroy {
   @ViewChildren (NeedsBlurDirective) private needsBlur: QueryList<NeedsBlurDirective>;
 
-  private candidateForm: FormGroup;
+  public candidateForm: FormGroup;
 
   /* See https://stackoverflow.com/a/41177163 for subscribe cleanup */
   private ngUnsubscribe: Subject<void> = new Subject<void> ();
-  private candidate: SonovatetestCandidate;
+  public candidate: SonovatetestCandidate;
 
   constructor (private route: ActivatedRoute,
                private router: Router,
