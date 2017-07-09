@@ -5,7 +5,7 @@ export class SonovatetestPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getNavElement () {
+    return element (by.css ('app-root nav.navbar'));
   }
 }

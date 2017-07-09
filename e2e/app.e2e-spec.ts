@@ -1,14 +1,14 @@
 import { SonovatetestPage } from './app.po';
 
-describe('sonovatetest App', () => {
+describe ('sonovatetest App', () => {
   let page: SonovatetestPage;
 
-  beforeEach(() => {
+  beforeAll (() => {
     page = new SonovatetestPage();
+    page.navigateTo ();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+  it ('should display a navigation bar', () => {
+    expect (page.getNavElement ()).toBeDefined ();
   });
 });
