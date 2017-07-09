@@ -29,14 +29,14 @@ export interface SonovatetestPlacement {
     jobtitle?: string;
 
     /**
-     * Placement start date
+     * Placement start date as ms since the Unix epoch
      */
-    startdate?: Date;
+    startdate?: number;
 
     /**
-     * Placement end date
+     * Placement end date as ms since Unix epoch
      */
-    enddate?: Date;
+    enddate?: number;
 
     /**
      * Placement type
@@ -52,6 +52,16 @@ export interface SonovatetestPlacement {
      * Placement client
      */
     client?: SonovatetestClient;
+
+    /**
+     * Placement client ID
+     */
+    clientid?: number;
+
+    /**
+     * Placement candidate ID
+     */
+    candidateid?: number;
 
 }
 export namespace SonovatetestPlacement {

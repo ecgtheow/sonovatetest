@@ -1,0 +1,202 @@
+<div>
+  <div class="card">
+    <h3 class="card-header">{{placement?.jobtitle}}</h3>
+    <div class="card-block">
+      <form [formGroup]="placementForm">
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="form-group row">
+              <label for="candidateSelect"
+                     class="col-4 col-form-label">
+                Candidate
+              </label>
+
+              <div class="col-8">
+                <select id="candidateSelect"
+                        class="custom-select form-control"
+                        placeholder="Candidate"
+                        formControlName="candidateid"
+                        appNeedsBlur>
+                  <option *ngFor="let candidate of candidates | async"
+                          [value]="candidate.id">
+                    {{candidate.name}}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="hidden-sm-down col-md-6">
+            &nbsp;
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="form-group row">
+              <label for="clientSelect"
+                     class="col-4 col-form-label">
+                Client
+              </label>
+
+              <div class="col-8">
+                <select id="clientSelect"
+                        class="custom-select form-control"
+                        placeholder="Client"
+                        formControlName="clientid"
+                        appNeedsBlur>
+                  <option *ngFor="let client of clients | async"
+                          [value]="client.id">
+                    {{client.name}}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="hidden-sm-down col-md-6">
+            &nbsp;
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="form-group row">
+              <label for="jobTitleInput"
+                     class="col-4 col-form-label">
+                Job Title
+              </label>
+
+              <div class="col-8">
+                <input id="jobTitleInput"
+                       type="text"
+                       class="form-control"
+                       required
+                       placeholder="Job Title"
+                       formControlName="jobtitle"
+                       appNeedsBlur>
+              </div>
+            </div>
+          </div>
+
+          <div class="hidden-sm-down col-md-6">
+            &nbsp;
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="form-group row">
+              <label for="startInput"
+                     class="col-4 col-form-label">
+                Start Date
+              </label>
+
+              <div class="col-8">
+                <div class="input-group">
+                  <input id="startInput"
+                         type="text"
+                         class="form-control"
+                         formControlName="startdate"
+                         ngbDatepicker
+                         #startdp="ngbDatepicker"/>
+                  <div class="input-group-addon"
+                       (click)="startdp.toggle ()">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="form-group row">
+              <label for="endInput"
+                     class="col-4 col-form-label">
+                End Date
+              </label>
+
+              <div class="col-8">
+                <div class="input-group">
+                  <input id="endInput"
+                         type="text"
+                         class="form-control"
+                         formControlName="enddate"
+                         ngbDatepicker
+                         #enddp="ngbDatepicker"/>
+                  <div class="input-group-addon"
+                       (click)="enddp.toggle ()">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="form-group row">
+              <label for="typeSelect"
+                     class="col-4 col-form-label">
+                Type
+              </label>
+
+              <div class="col-8">
+                <select id="typeSelect"
+                        class="custom-select form-control"
+                        placeholder="Placement Type"
+                        formControlName="placementtype"
+                        appNeedsBlur>
+                  <option value="0">Weekly</option>
+                  <option value="1">Monthly</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="hidden-sm-down col-md-6">
+            &nbsp;
+          </div>
+        </div>
+      </form>
+
+      <div class="row mt-3 mb-3">
+        <div class="col-12">
+          <button type="button"
+                  class="btn btn-primary"
+                  [disabled]="!placement?.id || !placement?.jobtitle || !placement?.clientid || !placement?.candidateid || !placement?.startdate || !placement?.enddate"
+                  (click)="generateTimesheets ()">
+            Generate Timesheets
+          </button>
+        </div>
+      </div>
+
+      <button type="button"
+              class="btn btn-primary"
+              [disabled]="placementForm.pristine || placementForm.invalid"
+              (click)="save ()">
+        Save
+      </button>
+      <button type="button"
+              class="btn btn-primary"
+              [disabled]="placementForm.pristine || placementForm.invalid"
+              (click)="save (false)">
+        Apply
+      </button>
+      <button type="button"
+              class="btn btn-danger"
+              [disabled]="placementForm.pristine"
+              (click)="revert ()">
+        Revert
+      </button>
+      <button type="button"
+              class="btn"
+              (click)="cancel ()">
+        Cancel
+      </button>
+
+    </div>
+  </div>
+</div>

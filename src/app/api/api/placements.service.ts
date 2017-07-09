@@ -20,6 +20,8 @@ import { Response, ResponseContentType }                     from '@angular/http
 import { Observable }                                        from 'rxjs/Observable';
 import '../rxjs-operators';
 
+import { SonovatetestCandidate } from '../model/sonovatetestCandidate';
+import { SonovatetestClient } from '../model/sonovatetestClient';
 import { SonovatetestPlacement } from '../model/sonovatetestPlacement';
 
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
@@ -121,6 +123,38 @@ export class PlacementsService {
     }
 
     /**
+     * Get candidate for a placement
+     * Retrieve the candidate associated with a placement
+     * @param id 
+     */
+    public sonovatetestStoreReadPlacementCandidate(id: number, extraHttpRequestParams?: any): Observable<SonovatetestCandidate> {
+        return this.sonovatetestStoreReadPlacementCandidateWithHttpInfo(id, extraHttpRequestParams)
+            .map((response: Response) => {
+                if (response.status === 204) {
+                    return undefined;
+                } else {
+                    return response.json() || {};
+                }
+            });
+    }
+
+    /**
+     * Get client for a placement
+     * Retrieve the client associated with a placement
+     * @param id 
+     */
+    public sonovatetestStoreReadPlacementClient(id: number, extraHttpRequestParams?: any): Observable<SonovatetestClient> {
+        return this.sonovatetestStoreReadPlacementClientWithHttpInfo(id, extraHttpRequestParams)
+            .map((response: Response) => {
+                if (response.status === 204) {
+                    return undefined;
+                } else {
+                    return response.json() || {};
+                }
+            });
+    }
+
+    /**
      * Get placements
      * Retrieve all placements from the store
      */
@@ -141,7 +175,7 @@ export class PlacementsService {
      * @param id 
      * @param placement The placement to be updated.  The id must match the id in the path parameter
      */
-    public sonovatetestStoreUpdatePlacement(id: number, placement: SonovatetestPlacement, extraHttpRequestParams?: any): Observable<{}> {
+    public sonovatetestStoreUpdatePlacement(id: number, placement: SonovatetestPlacement, extraHttpRequestParams?: any): Observable<SonovatetestPlacement> {
         return this.sonovatetestStoreUpdatePlacementWithHttpInfo(id, placement, extraHttpRequestParams)
             .map((response: Response) => {
                 if (response.status === 204) {
@@ -244,6 +278,80 @@ export class PlacementsService {
         // verify required parameter 'id' is not null or undefined
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling sonovatetestStoreReadPlacement.');
+        }
+
+        // to determine the Accept header
+        let produces: string[] = [
+            'application/json'
+        ];
+
+            
+        let requestOptions: RequestOptionsArgs = new RequestOptions({
+            method: RequestMethod.Get,
+            headers: headers,
+            search: queryParameters,
+            withCredentials:this.configuration.withCredentials
+        });
+        // https://github.com/swagger-api/swagger-codegen/issues/4037
+        if (extraHttpRequestParams) {
+            requestOptions = (<any>Object).assign(requestOptions, extraHttpRequestParams);
+        }
+
+        return this.http.request(path, requestOptions);
+    }
+
+    /**
+     * Get candidate for a placement
+     * Retrieve the candidate associated with a placement
+     * @param id 
+     */
+    public sonovatetestStoreReadPlacementCandidateWithHttpInfo(id: number, extraHttpRequestParams?: any): Observable<Response> {
+        const path = this.basePath + '/api/store/placements/${id}/candidate'
+                    .replace('${' + 'id' + '}', String(id));
+
+        let queryParameters = new URLSearchParams();
+        let headers = new Headers(this.defaultHeaders.toJSON()); // https://github.com/angular/angular/issues/6845
+
+        // verify required parameter 'id' is not null or undefined
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling sonovatetestStoreReadPlacementCandidate.');
+        }
+
+        // to determine the Accept header
+        let produces: string[] = [
+            'application/json'
+        ];
+
+            
+        let requestOptions: RequestOptionsArgs = new RequestOptions({
+            method: RequestMethod.Get,
+            headers: headers,
+            search: queryParameters,
+            withCredentials:this.configuration.withCredentials
+        });
+        // https://github.com/swagger-api/swagger-codegen/issues/4037
+        if (extraHttpRequestParams) {
+            requestOptions = (<any>Object).assign(requestOptions, extraHttpRequestParams);
+        }
+
+        return this.http.request(path, requestOptions);
+    }
+
+    /**
+     * Get client for a placement
+     * Retrieve the client associated with a placement
+     * @param id 
+     */
+    public sonovatetestStoreReadPlacementClientWithHttpInfo(id: number, extraHttpRequestParams?: any): Observable<Response> {
+        const path = this.basePath + '/api/store/placements/${id}/client'
+                    .replace('${' + 'id' + '}', String(id));
+
+        let queryParameters = new URLSearchParams();
+        let headers = new Headers(this.defaultHeaders.toJSON()); // https://github.com/angular/angular/issues/6845
+
+        // verify required parameter 'id' is not null or undefined
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling sonovatetestStoreReadPlacementClient.');
         }
 
         // to determine the Accept header

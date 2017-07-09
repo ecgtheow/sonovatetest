@@ -1,0 +1,89 @@
+<div *ngFor="let sheet of sheets">
+  <div class="card timesheet mb-4">
+    <h3 class="card-header">{{placement?.jobtitle}}</h3>
+    <div class="card-block">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="row">
+            <div class="col-4">
+              Client:
+            </div>
+
+            <div class="col-8">
+              {{client?.name}}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="row">
+            <div class="col-4">
+              Candidate:
+            </div>
+
+            <div class="col-8">
+              {{candidate?.name}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col-12 col-md-6">
+          <div class="row">
+            <div class="col-4">
+              From:
+            </div>
+
+            <div class="col-8">
+              {{sheet.startdate.format ('MMMM Do YYYY')}}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="row">
+            <div class="col-4">
+              To:
+            </div>
+
+            <div class="col-8">
+              {{sheet.enddate.format ('MMMM Do YYYY')}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <table class="table table-striped table-bordered table-sm">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Hours Worked</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let day of sheet.days">
+            <td>{{day.format ('MMMM Do YYYY')}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Total hours:</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<button type="button"
+        class="btn btn-primary hidden-print"
+        (click)="done ()">
+  Done
+</button>

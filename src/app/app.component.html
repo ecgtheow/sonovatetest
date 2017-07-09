@@ -1,4 +1,4 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+<nav class="navbar navbar-toggleable-sm navbar-light bg-faded hidden-print">
   <button class="navbar-toggler navbar-toggler-right"
           type="button"
           (click)="isNavbarExpanded = !isNavbarExpanded"
@@ -29,6 +29,12 @@
          routerLink="/candidates"
          routerLinkActive="active">
         Candidates
+      </a>
+      <a class="nav-item nav-link"
+         (click)="isNavbarExpanded = false"
+         routerLink="/placements"
+         routerLinkActive="active">
+        Placements
       </a>
     </div>
   </div>

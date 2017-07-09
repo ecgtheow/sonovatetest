@@ -12,6 +12,7 @@ import { BASE_PATH } from './api/variables';
 import { SharedModule } from './shared/shared.module';
 import { CandidatesModule } from './candidates/candidates.module';
 import { ClientsModule } from './clients/clients.module';
+import { PlacementsModule } from './placements/placements.module';
 import { AlertsService } from './alerts.service';
 
 @NgModule({
@@ -23,6 +24,7 @@ import { AlertsService } from './alerts.service';
     SharedModule,
     CandidatesModule,
     ClientsModule,
+    PlacementsModule,
     AppRoutingModule,
     HttpModule,
     NgbModule.forRoot ()
